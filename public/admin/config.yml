@@ -2,8 +2,7 @@ backend:
   name: github
   repo: Mayajaisingh/mayajaisingh.github.io
   branch: main
-  base_url: https://YOUR_GITHUB_OAUTH_SERVER
-  auth_endpoint: /auth
+  use_graphql: false
 
 publish_mode: editorial_workflow
 media_folder: public/uploads
