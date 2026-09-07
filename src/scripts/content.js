@@ -18,7 +18,9 @@ export async function getPosts() {
 }
 
 export async function getPostBySlug(slug) {
-  const response = await fetch(`/content/posts/${slug}.json`);
+  const normalized = String(slug || '');
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/i.test(normalized)) return null;
+  const response = await fetch(`/content/posts/${encodeURIComponent(normalized)}.json`);
   if (!response.ok) return null;
   const post = await response.json();
   const isPublished = post.status === 'published' && new Date(post.publishDate).getTime() <= Date.now();
