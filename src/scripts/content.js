@@ -20,9 +20,24 @@ export async function getPosts() {
 export async function getPostBySlug(slug) {
   const normalized = String(slug || '');
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/i.test(normalized)) return null;
-  const response = await fetch(`/content/posts/${encodeURIComponent(normalized)}.json`);
-  if (!response.ok) return null;
-  const post = await response.json();
-  const isPublished = post.status === 'published' && new Date(post.publishDate).getTime() <= Date.now();
-  return isPublished ? post : null;
+
+  const directResponse = await fetch(`/content/posts/${encodeURIComponent(normalized)}.json`);
+  if (directResponse.ok) {
+    const directPost = await directResponse.json();
+    const isPublished = directPost.status === 'published' && new Date(directPost.publishDate).getTime() <= Date.now();
+    return isPublished ? directPost : null;
+  }
+
+  const indexResponse = await fetch(POSTS_INDEX_PATH);
+  if (!indexResponse.ok) return null;
+  const posts = await indexResponse.json();
+  const entry = posts.find((post) => post.slug === normalized);
+  const fallbackId = entry?.id || entry?.slug;
+  if (!fallbackId || fallbackId === normalized) return null;
+
+  const fallbackResponse = await fetch(`/content/posts/${encodeURIComponent(fallbackId)}.json`);
+  if (!fallbackResponse.ok) return null;
+  const fallbackPost = await fallbackResponse.json();
+  const isPublished = fallbackPost.status === 'published' && new Date(fallbackPost.publishDate).getTime() <= Date.now();
+  return isPublished ? fallbackPost : null;
 }

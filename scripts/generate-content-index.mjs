@@ -12,7 +12,9 @@ for (const file of files) {
   const fullPath = path.join(postsDir, file);
   const text = await fs.readFile(fullPath, 'utf8');
   const data = JSON.parse(text);
+  const entryId = path.basename(file, '.json');
   posts.push({
+    id: entryId,
     slug: data.slug,
     title: data.title,
     excerpt: data.excerpt || '',
