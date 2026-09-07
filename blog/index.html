@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog · Maya Jaisingh</title>
+    <meta name="description" content="Blog posts by Maya Jaisingh." />
+    <script type="module" src="/src/scripts/blog-list.js"></script>
+  </head>
+  <body data-page="blog">
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="/">Maya Jaisingh</a>
+        <nav aria-label="Primary">
+          <a href="/">Home</a>
+          <a aria-current="page" href="/blog/">Blog</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color mode">◐</button>
+      </header>
+
+      <main>
+        <section class="hero compact">
+          <h1>Blog</h1>
+          <p class="lede">Stories, notes, and essays.</p>
+        </section>
+
+        <section aria-label="Search posts" class="search-panel">
+          <label for="search-input">Search</label>
+          <input id="search-input" type="search" placeholder="Search posts" />
+        </section>
+
+        <section aria-label="Browse tags" class="tags-panel">
+          <h2>Tags</h2>
+          <ul id="tag-list" class="tags-list"></ul>
+        </section>
+
+        <section aria-labelledby="all-posts">
+          <h2 id="all-posts" class="visually-hidden">All posts</h2>
+          <ul id="blog-list" class="post-list"></ul>
+          <p id="empty-state" class="hidden">No posts match your search.</p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>© <span id="year"></span> Maya Jaisingh</p>
+      </footer>
+    </div>
+  </body>
+</html>

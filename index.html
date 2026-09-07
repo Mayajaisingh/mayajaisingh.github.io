@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maya Jaisingh</title>
+    <meta name="description" content="Personal site and writing by Maya Jaisingh." />
+    <script type="module" src="/src/scripts/home.js"></script>
+  </head>
+  <body data-page="home">
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="/">Maya Jaisingh</a>
+        <nav aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/blog/">Blog</a>
+          <a href="#about">About</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color mode">◐</button>
+      </header>
+
+      <main>
+        <section class="hero">
+          <p class="kicker">Hello, I'm Maya.</p>
+          <h1>Writing about ideas, life, and the internet.</h1>
+          <p id="site-tagline" class="lede"></p>
+        </section>
+
+        <section class="post-stream" aria-labelledby="latest-posts">
+          <div class="section-title-row">
+            <h2 id="latest-posts">Latest posts</h2>
+            <a class="more-link" href="/blog/">See all</a>
+          </div>
+          <ul id="latest-list" class="post-list"></ul>
+        </section>
+
+        <section id="about" class="about">
+          <h2>About</h2>
+          <p id="about-text"></p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>© <span id="year"></span> Maya Jaisingh</p>
+      </footer>
+    </div>
+  </body>
+</html>
