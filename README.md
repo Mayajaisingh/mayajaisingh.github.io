@@ -39,12 +39,12 @@ Set `public/admin/config.yml` backend values:
 - `branch`: set to the publishing branch (`main` here)
 - `use_graphql: false`: required for reliable direct PAT sign-in
 
-For direct sign-in with a GitHub Personal Access Token, use a classic token (or fine-grained token) with write access to repository contents and pull requests.
+For direct sign-in with a GitHub Personal Access Token, use a classic token (or fine-grained token) with write access to repository contents.
 
-### 2) Enable workflow
+### 2) Save mode
 
-- Keep `publish_mode: editorial_workflow` for draft/review/publish flow.
-- Editors create and review posts in CMS without writing markdown manually.
+- Use `publish_mode: simple` so CMS saves content directly to the configured branch.
+- This avoids pull-request API calls that can fail with `Resource not accessible by personal access token` during text entry saves.
 
 ## Rich post blocks supported
 
