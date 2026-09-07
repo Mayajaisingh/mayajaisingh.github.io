@@ -27,16 +27,15 @@
         {
           "src": "/uploads/sample-1.svg",
           "alt": "Sample image one"
-        },
-        {
-          "src": "/uploads/sample-2.svg",
-          "alt": "Sample image two"
         }
       ]
     },
     {
       "type": "code",
-      "code": "const hello = 'world';\nconsole.log(hello);"
+      "code": {
+        "code": "",
+        "lang": "plain"
+      }
     },
     {
       "type": "embed",
