@@ -1,4 +1,4 @@
-import { initTheme, initYear } from '/src/scripts/common.js';
+import { initTheme, initYear, safeHtml } from '/src/scripts/common.js';
 import { getPosts } from '/src/scripts/content.js';
 import { renderPostCard } from '/src/scripts/render.js';
 
@@ -14,7 +14,7 @@ async function init() {
 
   const tags = [...new Set(posts.flatMap((post) => post.tags || []))].sort((a, b) => a.localeCompare(b));
   tagList.innerHTML = tags
-    .map((tag) => `<li><a href="/blog/tags/?tag=${encodeURIComponent(tag)}">${tag}</a></li>`)
+    .map((tag) => `<li><a href="/blog/tags/?tag=${encodeURIComponent(tag)}">${safeHtml(tag)}</a></li>`)
     .join('');
 
   const paint = (items) => {
