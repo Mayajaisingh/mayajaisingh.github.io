@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "draft-example",
+    "title": "Draft example",
+    "excerpt": "This should stay hidden until published.",
+    "tags": [
+      "draft"
+    ],
+    "publishDate": "2026-12-01",
+    "status": "draft"
+  },
+  {
+    "slug": "welcome-to-my-new-site",
+    "title": "Welcome to my new site",
+    "excerpt": "A short note about what I'll be writing here.",
+    "tags": [
+      "announcement",
+      "writing"
+    ],
+    "publishDate": "2026-09-01",
+    "status": "published"
+  }
+]

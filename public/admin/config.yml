@@ -1,0 +1,104 @@
+backend:
+  name: github
+  repo: Mayajaisingh/mayajaisingh.github.io
+  branch: main
+  base_url: https://YOUR_GITHUB_OAUTH_SERVER
+  auth_endpoint: /auth
+
+publish_mode: editorial_workflow
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: settings
+    label: Site Settings
+    files:
+      - label: Site Settings
+        name: site
+        file: public/content/site.json
+        format: json
+        fields:
+          - { label: Site title, name: siteTitle, widget: string }
+          - { label: Tagline, name: tagline, widget: text }
+          - { label: About, name: about, widget: text }
+
+  - name: posts
+    label: Blog Posts
+    folder: public/content/posts
+    create: true
+    slug: '{{slug}}'
+    extension: json
+    format: json
+    identifier_field: title
+    summary: '{{title}} — {{publishDate}}'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Slug, name: slug, widget: string, hint: 'Use lowercase words with hyphens' }
+      - { label: Excerpt, name: excerpt, widget: text }
+      - { label: Publish Date, name: publishDate, widget: datetime, date_format: YYYY-MM-DD, time_format: false }
+      - label: Status
+        name: status
+        widget: select
+        options: [draft, published]
+        default: draft
+      - { label: Tags, name: tags, widget: list, default: [] }
+      - label: Content blocks
+        name: blocks
+        widget: list
+        types:
+          - label: Paragraph
+            name: paragraph
+            widget: object
+            fields:
+              - { label: Type, name: type, widget: hidden, default: paragraph }
+              - { label: Text, name: text, widget: text }
+          - label: Heading
+            name: heading
+            widget: object
+            fields:
+              - { label: Type, name: type, widget: hidden, default: heading }
+              - { label: Text, name: text, widget: string }
+          - label: Quote
+            name: quote
+            widget: object
+            fields:
+              - { label: Type, name: type, widget: hidden, default: quote }
+              - { label: Text, name: text, widget: text }
+          - label: Image
+            name: image
+            widget: object
+            fields:
+              - { label: Type, name: type, widget: hidden, default: image }
+              - { label: Image, name: src, widget: image }
+              - { label: Alt text, name: alt, widget: string, required: false }
+          - label: Gallery
+            name: gallery
+            widget: object
+            fields:
+              - { label: Type, name: type, widget: hidden, default: gallery }
+              - label: Images
+                name: images
+                widget: list
+                fields:
+                  - { label: Image, name: src, widget: image }
+                  - { label: Alt text, name: alt, widget: string, required: false }
+          - label: Code block
+            name: code
+            widget: object
+            fields:
+              - { label: Type, name: type, widget: hidden, default: code }
+              - { label: Code, name: code, widget: code }
+          - label: YouTube embed
+            name: embed_youtube
+            widget: object
+            fields:
+              - { label: Type, name: type, widget: hidden, default: embed }
+              - { label: Provider, name: provider, widget: hidden, default: youtube }
+              - { label: YouTube Video ID, name: id, widget: string }
+          - label: Tweet embed
+            name: embed_tweet
+            widget: object
+            fields:
+              - { label: Type, name: type, widget: hidden, default: embed }
+              - { label: Provider, name: provider, widget: hidden, default: tweet }
+              - { label: Tweet URL, name: url, widget: string }

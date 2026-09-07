@@ -1,0 +1,14 @@
+{
+  "title": "Draft example",
+  "slug": "draft-example",
+  "excerpt": "This should stay hidden until published.",
+  "publishDate": "2026-12-01",
+  "status": "draft",
+  "tags": ["draft"],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "This draft post should not appear publicly."
+    }
+  ]
+}
