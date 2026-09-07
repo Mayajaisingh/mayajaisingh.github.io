@@ -30,9 +30,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate blog index
-        run: npm run content:index
-
       - name: Build
         run: npm run build
 
