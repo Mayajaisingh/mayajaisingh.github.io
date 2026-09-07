@@ -1,7 +1,7 @@
 {
   "title": "Welcome to my new site",
   "slug": "welcome-to-my-new-site",
-  "excerpt": "A short note about what I'll be writing here. Sri",
+  "excerpt": "A short note about what I'll be writing here.",
   "publishDate": "2026-09-01",
   "status": "published",
   "tags": [
@@ -36,10 +36,7 @@
     },
     {
       "type": "code",
-      "code": {
-        "code": "",
-        "lang": "plain"
-      }
+      "code": "const hello = 'world';\nconsole.log(hello);"
     },
     {
       "type": "embed",
