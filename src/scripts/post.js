@@ -21,7 +21,7 @@ async function init() {
   document.title = `${post.title} · Maya Jaisingh`;
   document.getElementById('post-date').textContent = formatDate(post.publishDate);
   document.getElementById('post-title').textContent = post.title;
-  document.getElementById('post-excerpt').textContent = post.excerpt;
+  document.getElementById('post-excerpt').textContent = post.excerpt || '';
   document.getElementById('post-content').innerHTML = renderBlocks(post.blocks || []);
   document.getElementById('post-tags').innerHTML = (post.tags || [])
     .map((tag) => `<li><a href="/blog/tags/?tag=${encodeURIComponent(tag)}">${safeHtml(tag)}</a></li>`)
