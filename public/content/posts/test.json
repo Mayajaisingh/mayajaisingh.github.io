@@ -1,0 +1,20 @@
+{
+  "title": "Test",
+  "slug": "test",
+  "excerpt": "test",
+  "publishDate": "2026-09-07",
+  "status": "published",
+  "tags": [
+    "test"
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "text": "test"
+    },
+    {
+      "type": "paragraph",
+      "text": "para"
+    }
+  ]
+}
