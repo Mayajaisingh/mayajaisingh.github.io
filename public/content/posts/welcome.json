@@ -25,7 +25,7 @@
       "type": "gallery",
       "images": [
         {
-          "src": "/uploads/sample-1.svg",
+          "src": "/uploads/Screenshot 2026-09-07 112439.png",
           "alt": "Sample image one"
         },
         {
@@ -36,7 +36,10 @@
     },
     {
       "type": "code",
-      "code": "const hello = 'world';\nconsole.log(hello);"
+      "code": {
+        "code": "",
+        "lang": "plain"
+      }
     },
     {
       "type": "embed",
