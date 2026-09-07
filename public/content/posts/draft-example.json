@@ -3,8 +3,10 @@
   "slug": "draft-example",
   "excerpt": "This should stay hidden until published.",
   "publishDate": "2026-12-01",
-  "status": "draft",
-  "tags": ["draft"],
+  "status": "published",
+  "tags": [
+    "draft"
+  ],
   "blocks": [
     {
       "type": "paragraph",
