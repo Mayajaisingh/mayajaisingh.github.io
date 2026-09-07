@@ -36,11 +36,10 @@ CMS is mounted at `/admin/`.
 
 Set `public/admin/config.yml` backend values:
 - `repo`: already set to this repository
-- `base_url`: URL of your OAuth server for Decap/Sveltia GitHub auth
-- `auth_endpoint`: auth path exposed by that OAuth server
+- `branch`: set to the publishing branch (`main` here)
+- `use_graphql: false`: required for reliable direct PAT sign-in
 
-Follow Sveltia GitHub backend setup docs:
-https://sveltiacms.app/en/docs/backends/github
+For direct sign-in with a GitHub Personal Access Token, use a classic token (or fine-grained token) with write access to repository contents and pull requests.
 
 ### 2) Enable workflow
 
