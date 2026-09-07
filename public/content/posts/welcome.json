@@ -1,10 +1,13 @@
 {
   "title": "Welcome to my new site",
   "slug": "welcome-to-my-new-site",
-  "excerpt": "A short note about what I'll be writing here.",
+  "excerpt": "A short note about what I'll be writing here. Sri",
   "publishDate": "2026-09-01",
   "status": "published",
-  "tags": ["announcement", "writing"],
+  "tags": [
+    "announcement",
+    "writing"
+  ],
   "blocks": [
     {
       "type": "paragraph",
@@ -21,13 +24,22 @@
     {
       "type": "gallery",
       "images": [
-        { "src": "/uploads/sample-1.svg", "alt": "Sample image one" },
-        { "src": "/uploads/sample-2.svg", "alt": "Sample image two" }
+        {
+          "src": "/uploads/sample-1.svg",
+          "alt": "Sample image one"
+        },
+        {
+          "src": "/uploads/sample-2.svg",
+          "alt": "Sample image two"
+        }
       ]
     },
     {
       "type": "code",
-      "code": "const hello = 'world';\nconsole.log(hello);"
+      "code": {
+        "code": "",
+        "lang": "plain"
+      }
     },
     {
       "type": "embed",
